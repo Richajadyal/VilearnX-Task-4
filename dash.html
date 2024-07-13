@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </nav>
+        <div class="search-bar">
+            <input type="search" placeholder="Search metrics or datasets">
+            <button>Search</button>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section class="overview">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="metric-card">
+                    <h5>Revenue</h5>
+                    <p>$10,234,567</p>
+                    <canvas id="revenue-chart" width="100" height="50"></canvas>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card">
+                    <h5>Conversion Rate</h5>
+                    <p>23.45%</p>
+                    <canvas id="conversion-chart" width="100" height="50"></canvas>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card">
+                    <h5>Average Order Value</h5>
+                    <p>$123.45</p>
+                    <canvas id="aov-chart" width="100" height="50"></canvas>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="metric-card">
+                    <h5>Customer Satisfaction</h5>
+                    <p>85%</p>
+                    <canvas id="csat-chart" width="100" height="50"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Insights Section -->
+    <section class="insights">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="insight-card">
+                    <h5>Top Selling Products</h5>
+                    <div class="chart-container">
+                        <canvas id="top-products-chart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="filter-container">
+                        <label>Filter by:</label>
+                        <select id="product-filter">
+                            <option value="all">All</option>
+                            <option value="category1">Category 1</option>
+                            <option value="category2">Category 2</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="insight-card">
+                    <h5>Customer Demographics</h5>
+                    <div class="chart-container">
+                        <canvas id="customer-demographics-chart" width="400" height="200"></canvas>
+                    </div>
+                    <div class="filter-container">
+                        <label>Filter by:</label>
+                        <select id="demographics-filter">
+                            <option value="all">All</option>
+                            <option value="age">Age</option>
+                            <option value="gender">Gender</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Details Section -->
+    <section class="details">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="data-table">
+                    <table id="data-table">
+                        <thead>
+                            <tr>
+                                <th> Metric </th>
+                                <th> Value </th>
+                                <th> Change </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be populated dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
